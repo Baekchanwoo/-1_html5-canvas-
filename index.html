@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>A Simple Canvas Example</title>
+
+        <style>
+            body{
+                background:#dddddd;
+            }
+         #canvas{
+            margin:10px;
+            padding:10px;
+            background:#ffffff;
+            border:thin inset #aaaaaa;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id='canvas' width='1200' height='700'>
+        Canvas not supported
+    </canvas>
+
+        <script>
+            var canvas = document.getElementById('canvas'),
+                context = canvas.getContext('2d');
+            
+            context.lineJoin = 'flat';
+            context.lineWidth = 2;
+
+            context.font = '24px Helveca';
+            context.fillText('다음 화면으로 이동하려면 오른쪽 화살표 버튼을 누르세요',500,20);
+            context.strokeRect(450,30,300,648);
+
+
+
+
+            context.fillStyle = 'skyblue';
+            context.lineJoin = 'round';
+            context.fillRect(460,50,60,20);
+            context.strokeStyle = 'blue';
+            context.strokeRect(460,50,60,20);
+
+            context.strokeStyle = 'black';
+
+            context.font = '15px Helveca';
+            context.fontStyle = 'white';
+            context.fillText('지원',475,70);
+            
+            // context.beginPath();
+            // context.rect(750,150,150,100);
+            // context.stroke();
+            // context.fill();
+
+
+            // context.strokeStyle = 'goldenrod';
+            // context.fillStyle = 'rgba(0,0,255,0.5)';
+
+            // context.strokeRect(75,100,200,200);
+            // context.fillRect(325,100,200,200);
+
+            // context.canvas.onmousedown = function(e){
+            //     context.clearRect(0,0,canvas.width,canvas.height);
+            // };
+            context.beginPath();
+            context.moveTo(600,110);
+            context.bezierCurveTo(550,110,500,150,500,190);
+            context.bezierCurveTo(500,230,550,270,600,270);
+            context.bezierCurveTo(650,270,700,230,700,190);
+            context.bezierCurveTo(700,150,650,110,600,110);
+            context.closePath();
+            context.stroke();
+
+
+            context.strokeStyle = 'blue';
+
+            context.beginPath();
+            context.moveTo(590,130);
+            context.bezierCurveTo(550,130,510,162,510,194);
+            context.bezierCurveTo(510,226,550,258,590,258);
+            context.bezierCurveTo(630,258,670,226,670,194);
+            context.bezierCurveTo(670,162,630,130,590,130);
+            context.closePath();
+            context.stroke();
+
+            context.strokeStyle = 'black';
+
+            context.beginPath();
+            context.moveTo(590,130);
+            context.bezierCurveTo(550,130,510,162,510,194);
+            context.bezierCurveTo(510,226,550,258,590,258);
+            context.bezierCurveTo(630,258,670,226,670,194);
+            context.bezierCurveTo(670,162,630,130,590,130);
+            context.closePath();
+            context.fill();
+
+
+
+
+        </script>
+</body>
+</html>
