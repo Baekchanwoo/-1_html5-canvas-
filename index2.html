@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>A Simple Canvas Example</title>
+
+        <style>
+            body{
+                background:#dddddd;
+            }
+         #canvas{
+            margin:10px;
+            padding:10px;
+            background:#ffffff;
+            border:thin inset #aaaaaa;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id='canvas' width='1200' height='700'>
+        Canvas not supported
+    </canvas>
+
+        <script>
+            var canvas = document.getElementById('canvas'),
+                context = canvas.getContext('2d');
+            
+            context.lineJoin = 'flat';
+            context.lineWidth = 2;
+
+            context.font = '24px Helveca';
+            context.fillText('다음 화면으로 이동하려면 오른쪽 화살표 버튼을 누르세요',500,20);
+            context.strokeRect(450,30,300,648);
+
+            context.fillStyle='rgba(175,142,129,1.0)';
+            // context.fillStyle='LightPink';
+            context.fillRect(450,30,50,648);
+            context.fillRect(550,30,50,648);
+            context.fillRect(650,30,50,648);
+
+            context.fillStyle='rgba(174,152,165,1.0)';
+            // context.fillStyle='Pink';
+            context.fillRect(500,30,50,648);
+            context.fillRect(600,30,50,648);
+            context.fillRect(700,30,50,648);
+
+            context.fillStyle='White';
+            context.fillRect(450,568,300,110);
+            context.strokeRect(450,568,300,110);
+            context.strokeRect(450,548,65,20)
+
+            context.clearRect(451,549,63,30);
+
+            context.font = 'bold 14px Helveca';
+            context.fillStyle = 'Black';
+            context.fillText('음식',465,573);
+
+            context.font = 'bold 12px Helveca';
+            context.clearRect(470,180,260,60);
+            context.fillText('해달에게 먹이를 주면 하트 미터가 채워집니',480,205);
+            context.fillText('다!',595,225);
+
+
+
+            context.clearRect(480,100,240,60);
+
+                        // context.fillStyle='rgba(175,142,129,1.0)';
+                        context.fillStyle='LightPink';
+            context.fillRect(480,100,20,60);
+            context.fillRect(550,100,50,60);
+            context.fillRect(650,100,50,60);
+
+            // context.fillStyle='rgba(174,152,165,1.0)';
+            context.fillStyle='Pink';
+            context.fillRect(500,100,50,60);
+            context.fillRect(600,100,50,60);
+            context.fillRect(700,100,20,60);
+
+
+            context.beginPath();
+            context.moveTo(585,187);
+            context.lineTo(600,147);
+            context.lineTo(615,187);
+            context.closePath();
+            context.fillStyle="White";
+            context.fill();
+
+
+            //////////////////////////
+            context.beginPath();
+            context.moveTo(600,240);
+            context.bezierCurveTo(560,240,520,290,520,340);
+            context.bezierCurveTo(520,390,560,440,600,440);
+            context.bezierCurveTo(640,440,680,390,680,340);
+            context.bezierCurveTo(680,290,640,240,600,240);
+            context.closePath();
+            context.stroke();
+
+
+
+            context.strokeStyle = 'black';
+
+</script>
+
+
+        </script>
+</body>
+</html>
